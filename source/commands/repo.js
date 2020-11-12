@@ -14,6 +14,7 @@ exports.run = (client, message, args) =>{
       }
     };
     // Number format (K M B )
+    console.log(`https://api.github.com/repos/${args[0]}/${args[1]}/releases/latest`)
     const numformat = n => {
         if (n < 1e3) return n;
         if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1) + "K";
@@ -47,23 +48,43 @@ exports.run = (client, message, args) =>{
         return
     }
     else
-    {   
+    {
         try
         {
+          if(jsonprased.assets == "")
+          {
             const profile = new discord.MessageEmbed()
             .setColor('#b434eb')
             .setTitle(`GitHub Repo Info - ${jsonprased.author.login}-${args[1]}`)
             .setURL(`https://github.com/${jsonprased.author.login}/${args[1]}`)
             .addField("Repo Name", `${args[1]}`, true)
             .addField("Made By", `${jsonprased.author.login}`,true) 
-            .addField("Created Date:",`${jsonprased.assets[0].created_at}`.replace(/T/, ' ').replace(/\..+/, '').split(' ')[0])
+            .addField("Created Date:",`${jsonprased.created_at}`.replace(/T/, ' ').replace(/\..+/, '').split(' ')[0])
+            .addFields(
+                {name: "Release Name:", value: `${jsonprased.name}`,inline: true},
+                {name: "Release Tag:", value: `${jsonprased.tag_name}`,inline: true},
+                {name: "Download Count:", value: `null`,inline: true},
+                )
+            .setFooter("GitHub Stats BOT Made by PapaSnags#1555", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+            message.channel.send({embed: profile })   
+          }
+          else
+          {
+            const profile = new discord.MessageEmbed()
+            .setColor('#b434eb')
+            .setTitle(`GitHub Repo Info - ${jsonprased.author.login}-${args[1]}`)
+            .setURL(`https://github.com/${jsonprased.author.login}/${args[1]}`)
+            .addField("Repo Name", `${args[1]}`, true)
+            .addField("Made By", `${jsonprased.author.login}`,true) 
+            .addField("Created Date:",`${jsonprased.created_at}`.replace(/T/, ' ').replace(/\..+/, '').split(' ')[0])
             .addFields(
                 {name: "Release Name:", value: `${jsonprased.name}`,inline: true},
                 {name: "Release Tag:", value: `${jsonprased.tag_name}`,inline: true},
                 {name: "Download Count:", value: `${jsonprased.assets[0].download_count}`,inline: true},
                 )
             .setFooter("GitHub Stats BOT Made by PapaSnags#1555", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
-            message.channel.send({embed: profile })      
+            message.channel.send({embed: profile })    
+          } 
         }
         catch (e)
         {
