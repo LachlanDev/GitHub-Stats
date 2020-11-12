@@ -11,7 +11,7 @@
 </p>
 
 # About
-An Open Source Discord BOT that gets in depth information about users and repositories on GitHub.
+An Open Source Discord BOT that gets in depth information about users and repositories on GitHub. [Discord BOT Invite Link](https://discord.com/oauth2/authorize?client_id=776332560295919626&scope=bot&permissions=117760)
 
 ## Commands 
 * Profile Lookup - **Usage:** g!profile PapaSnags
