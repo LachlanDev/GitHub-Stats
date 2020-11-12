@@ -14,7 +14,6 @@ exports.run = (client, message, args) =>{
       }
     };
     // Number format (K M B )
-    console.log(`https://api.github.com/repos/${args[0]}/${args[1]}/releases/latest`)
     const numformat = n => {
         if (n < 1e3) return n;
         if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1) + "K";
