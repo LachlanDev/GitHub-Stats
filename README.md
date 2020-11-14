@@ -15,13 +15,13 @@ An Open Source Discord BOT that gets in depth information about users and reposi
 
 ## Commands 
 * Profile Lookup - **Usage:** g!profile PapaSnags
-* Repository Lookup - **Usage:** g!repo PapaSnags GitHub-Stats
+* Repositories - **Usage:** g!repo PapaSnags
 * Help - **Usage:** g!help
 
 ## Preview
 ### Profile Lookup / Repository Lookup
 <img src="https://i.imgur.com/eR62tlO.png" height="300">
-<img src="https://i.imgur.com/eJO5eRL.png" height="300">
+<img src="https://i.imgur.com/TyRiBwv.png" height="300">
 
 ## Contribute
 If you would like to contribute to the project please open a PR (Pull Request) clearly showing your changes.
