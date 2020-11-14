@@ -1,97 +1,127 @@
 const discord = require ("discord.js");
 const client = new discord.Client();
 const chalk = require("chalk");
+const Pagination = require('discord-paginationembed');
 
 exports.run = (client, message, args) =>{
     var request = require("request");
     // GitHub API Request
     var options = {
       method: 'GET',
-      url: `https://api.github.com/repos/${args[0]}/${args[1]}/releases/latest`,
+      url: `https://api.github.com/users/${args[0]}/repos?sort=created`,
       headers: {
         'User-Agent': 'GitHub-Stats-PapaSnags',
         useQueryString: true
       }
     };
-    // Number format (K M B )
-    const numformat = n => {
-        if (n < 1e3) return n;
-        if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1) + "K";
-        if (n >= 1e6 && n < 1e9) return +(n / 1e6).toFixed(1) + "M";
-        if (n >= 1e9 && n < 1e12) return +(n / 1e9).toFixed(1) + "B";
-        if (n >= 1e12) return +(n / 1e12).toFixed(1) + "T";
-        };
 
     request(options, function (error, response, body) {
-        try 
-        {
-          jsonprased = JSON.parse(body)
-        } 
-        catch (e) 
-        {
-          const error = new discord.MessageEmbed()
-          .setColor('#b434eb')
-          .addField('An Error Has occured', `Please try again, or contact PapaSnags#1555`)
-          .setFooter("GitHub Stats BOT Made by PapaSnags#1555", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
-          message.channel.send({embed: error })
-          return
-        }
+    try 
+    {
+      jsonprased = JSON.parse(body)
+    } 
+    catch (e) 
+    {
+      const error = new discord.MessageEmbed()
+      .setColor('#b434eb')
+      .addField('An Error Has occured', `Please try again, or contact PapaSnags#1555`)
+      .setFooter("GitHub Stats BOT Made by PapaSnags#1555", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+      message.channel.send({embed: error })
+      return
+    }
         
     if(jsonprased.message == "Not Found")
     {
-        const usernf = new discord.MessageEmbed()
-        .setColor('#b434eb')
-        .addField('Repo Not Found', `Please try again and check the spelling.`)
-        .setFooter("GitHub Stats BOT Made by PapaSnags#1555", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
-        message.channel.send({embed: usernf })
-        return
+      const usernf = new discord.MessageEmbed()
+      .setColor('#b434eb')
+      .addField('User Not Found', `Please try again and check the spelling.`)
+      .setFooter("GitHub Stats BOT Made by PapaSnags#1555", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+      message.channel.send({embed: usernf })
+      return
     }
     else
     {
-        try
+      try
+      {
+        async function send() 
         {
-          if(jsonprased.assets == "")
+          if(jsonprased[0])
           {
-            const profile = new discord.MessageEmbed()
-            .setColor('#b434eb')
-            .setTitle(`GitHub Repo Info - ${jsonprased.author.login}-${args[1]}`)
-            .setURL(`https://github.com/${jsonprased.author.login}/${args[1]}`)
-            .addField("Repo Name", `${args[1]}`, true)
-            .addField("Made By", `${jsonprased.author.login}`,true) 
-            .addField("Created Date:",`${jsonprased.created_at}`.replace(/T/, ' ').replace(/\..+/, '').split(' ')[0])
-            .addFields(
-                {name: "Release Name:", value: `${jsonprased.name}`,inline: true},
-                {name: "Release Tag:", value: `${jsonprased.tag_name}`,inline: true},
-                {name: "Download Count:", value: `null`,inline: true},
-                )
-            .setFooter("GitHub Stats BOT Made by PapaSnags#1555", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
-            message.channel.send({embed: profile })   
+            var val = [{ name: `${jsonprased[0].name}`, lang: `${jsonprased[0].language}`, desc: `${jsonprased[0].description}`, star: `${jsonprased[0].stargazers_count}`, watch: `${jsonprased[0].watchers_count}`, fork: `${jsonprased[0].forks}`, issu: `${jsonprased[0].open_issues_count}`}]
+          }
+          if(jsonprased[1])
+          {
+            var val = [{ name: `${jsonprased[0].name}`, lang: `${jsonprased[0].language}`, desc: `${jsonprased[0].description}`, star: `${jsonprased[0].stargazers_count}`, watch: `${jsonprased[0].watchers_count}`, fork: `${jsonprased[0].forks}`, issu: `${jsonprased[0].open_issues_count}`}, { name: `${jsonprased[1].name}`, lang: `${jsonprased[1].language}`, desc: `${jsonprased[1].description}`, star: `${jsonprased[1].stargazers_count}`, watch: `${jsonprased[1].watchers_count}`, fork: `${jsonprased[1].forks}`, issu: `${jsonprased[1].open_issues_count}`}]
+          }
+          if(jsonprased[2])
+          {
+            var val = [{ name: `${jsonprased[0].name}`, lang: `${jsonprased[0].language}`, desc: `${jsonprased[0].description}`, star: `${jsonprased[0].stargazers_count}`, watch: `${jsonprased[0].watchers_count}`, fork: `${jsonprased[0].forks}`, issu: `${jsonprased[0].open_issues_count}`}, { name: `${jsonprased[1].name}`, lang: `${jsonprased[1].language}`, desc: `${jsonprased[1].description}`, star: `${jsonprased[1].stargazers_count}`, watch: `${jsonprased[1].watchers_count}`, fork: `${jsonprased[1].forks}`, issu: `${jsonprased[1].open_issues_count}`}, { name: `${jsonprased[2].name}`, lang: `${jsonprased[2].language}`, desc: `${jsonprased[2].description}`, star: `${jsonprased[2].stargazers_count}`, watch: `${jsonprased[2].watchers_count}`, fork: `${jsonprased[2].forks}`, issu: `${jsonprased[2].open_issues_count}`}]
+          }
+          if(jsonprased[3])
+          {
+            var val = [{ name: `${jsonprased[0].name}`, lang: `${jsonprased[0].language}`, desc: `${jsonprased[0].description}`, star: `${jsonprased[0].stargazers_count}`, watch: `${jsonprased[0].watchers_count}`, fork: `${jsonprased[0].forks}`, issu: `${jsonprased[0].open_issues_count}`}, { name: `${jsonprased[1].name}`, lang: `${jsonprased[1].language}`, desc: `${jsonprased[1].description}`, star: `${jsonprased[1].stargazers_count}`, watch: `${jsonprased[1].watchers_count}`, fork: `${jsonprased[1].forks}`, issu: `${jsonprased[1].open_issues_count}`}, { name: `${jsonprased[2].name}`, lang: `${jsonprased[2].language}`, desc: `${jsonprased[2].description}`, star: `${jsonprased[2].stargazers_count}`, watch: `${jsonprased[2].watchers_count}`, fork: `${jsonprased[2].forks}`, issu: `${jsonprased[2].open_issues_count}`}, { name: `${jsonprased[3].name}`, lang: `${jsonprased[3].language}`, desc: `${jsonprased[3].description}`, star: `${jsonprased[3].stargazers_count}`, watch: `${jsonprased[3].watchers_count}`, fork: `${jsonprased[3].forks}`, issu: `${jsonprased[3].open_issues_count}`}]
+          }
+          if(jsonprased[4])
+          {
+            var val = [{ name: `${jsonprased[0].name}`, lang: `${jsonprased[0].language}`, desc: `${jsonprased[0].description}`, star: `${jsonprased[0].stargazers_count}`, watch: `${jsonprased[0].watchers_count}`, fork: `${jsonprased[0].forks}`, issu: `${jsonprased[0].open_issues_count}`}, { name: `${jsonprased[1].name}`, lang: `${jsonprased[1].language}`, desc: `${jsonprased[1].description}`, star: `${jsonprased[1].stargazers_count}`, watch: `${jsonprased[1].watchers_count}`, fork: `${jsonprased[1].forks}`, issu: `${jsonprased[1].open_issues_count}`}, { name: `${jsonprased[2].name}`, lang: `${jsonprased[2].language}`, desc: `${jsonprased[2].description}`, star: `${jsonprased[2].stargazers_count}`, watch: `${jsonprased[2].watchers_count}`, fork: `${jsonprased[2].forks}`, issu: `${jsonprased[2].open_issues_count}`}, { name: `${jsonprased[3].name}`, lang: `${jsonprased[3].language}`, desc: `${jsonprased[3].description}`, star: `${jsonprased[3].stargazers_count}`, watch: `${jsonprased[3].watchers_count}`, fork: `${jsonprased[3].forks}`, issu: `${jsonprased[3].open_issues_count}`}, { name: `${jsonprased[4].name}`, lang: `${jsonprased[4].language}`, desc: `${jsonprased[4].description}`, star: `${jsonprased[4].stargazers_count}`, watch: `${jsonprased[4].watchers_count}`, fork: `${jsonprased[4].forks}`, issu: `${jsonprased[4].open_issues_count}`}]
           }
           else
           {
-            const profile = new discord.MessageEmbed()
+            const usernp = new discord.MessageEmbed()
             .setColor('#b434eb')
-            .setTitle(`GitHub Repo Info - ${jsonprased.author.login}-${args[1]}`)
-            .setURL(`https://github.com/${jsonprased.author.login}/${args[1]}`)
-            .addField("Repo Name", `${args[1]}`, true)
-            .addField("Made By", `${jsonprased.author.login}`,true) 
-            .addField("Created Date:",`${jsonprased.created_at}`.replace(/T/, ' ').replace(/\..+/, '').split(' ')[0])
-            .addFields(
-                {name: "Release Name:", value: `${jsonprased.name}`,inline: true},
-                {name: "Release Tag:", value: `${jsonprased.tag_name}`,inline: true},
-                {name: "Download Count:", value: `${jsonprased.assets[0].download_count}`,inline: true},
-                )
+            .addField(`Cannot find any Repositories by ${args[0]}`, `Please try again, or search another user.`)
             .setFooter("GitHub Stats BOT Made by PapaSnags#1555", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
-            message.channel.send({embed: profile })    
-          } 
-        }
-        catch (e)
-        {
-            const error = new discord.MessageEmbed()
-            .setColor('#b434eb')
-            .addField('An Error Has occured', `Please try again, or contact PapaSnags#1555`)
+            message.channel.send({embed: usernp })
+          }
+          const FieldsEmbed = new Pagination.FieldsEmbed()
+            .setArray(val)
+            .setAuthorizedUsers([message.author.id])
+            .setChannel(message.channel)
+            .setElementsPerPage(1)
+            // Initial page on deploy
+            .setPage(1)
+            .setPageIndicator(true)
+            .formatField('Name', i => i.name)
+            .formatField('Language', i => i.lang)
+            .formatField('Description', i => i.desc, false)
+            .formatField('Stars', i => i.star, true)
+            .formatField('Watchers', i => i.watch, true)
+            .formatField('Forks', i => i.fork, true)
+            .formatField('Issues', i => i.issu, true)
+
+
+
+            // Deletes the embed upon awaiting timeout
+            .setDeleteOnTimeout(true)
+            // Disable built-in navigation emojis, in this case: 🗑 (Delete Embed)
+            .setDisabledNavigationEmojis(['delete','jump'])
+            // Set your own customised emojis
+            .setEmojisFunctionAfterNavigation(false);
+          
+          FieldsEmbed.embed
+            .setColor(0xFF00AE)
+            .setTitle(`User Repo Info - @${args[0]}`)
+            .setURL(`https://github.com/${args[0]}?tab=repositories`)
+            .setThumbnail(jsonprased[0].owner.avatar_url)
             .setFooter("GitHub Stats BOT Made by PapaSnags#1555", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
-            message.channel.send({embed: error })
+            .setDescription(`Repositories by ${args[0]} (Sorted by created date. Max 5)`);
+            
+          
+          await FieldsEmbed.build();
+          
+          // Will not log until the instance finished awaiting user responses
+          // (or techinically emitted either `expire` or `finish` event)
+          
         }
+        send()
+      }
+      catch (e)
+      {
+        const error = new discord.MessageEmbed()
+        .setColor('#b434eb')
+        .addField('An Error Has occured', `Please try again, or contact PapaSnags#1555`)
+        .setFooter("GitHub Stats BOT Made by PapaSnags#1555", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+        message.channel.send({embed: error })
+      }
     }
 })};

@@ -36,7 +36,7 @@ exports.run = (client, message, args) =>{
           message.channel.send({embed: error })
           return
         }
-        
+  
     if(jsonprased.message == "Not Found")
     {
         const usernf = new discord.MessageEmbed()
@@ -54,14 +54,14 @@ exports.run = (client, message, args) =>{
             {
                 const profile = new discord.MessageEmbed()
                 .setColor('#b434eb')
-                .setTitle(`GitHub User Info - @${jsonprased.login}`)
+                .setTitle(`User Info - @${jsonprased.login}`)
                 .setURL(`https://github.com/${jsonprased.login}`)
                 .setThumbnail(jsonprased.avatar_url)
                 .addField("Username", `${jsonprased.login}`, true)
                 .addField("Name", `${jsonprased.name}`, true)
                 .addField("Bio", `${jsonprased.bio}`)
                 .addField('Location', `${jsonprased.location}`)
-                .addField('Website:', "null")
+                .addField('Website:', "None")
                 .addField('Repo Count:', numformat(jsonprased.public_repos), true)
                 .addField('Followers', numformat(jsonprased.followers), true)
                 .addField('Following', numformat(jsonprased.following), true)
