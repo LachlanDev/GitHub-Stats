@@ -90,8 +90,6 @@ exports.run = (client, message, args) =>{
             .formatField('Issues', i => i.issu, true)
             .formatField('Created', i => i.date, false)
 
-
-
             // Deletes the embed upon awaiting timeout
             .setDeleteOnTimeout(true)
             // Disable built-in navigation emojis, in this case: 🗑 (Delete Embed)
@@ -107,7 +105,6 @@ exports.run = (client, message, args) =>{
             .setFooter("GitHub Stats BOT Made by PapaSnags#1555", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
             .setDescription(`Repositories by ${args[0]} (Sorted by created date. Max 5)`);
             
-          
           await FieldsEmbed.build();
           message.channel.send("An Embed has been deleted due to inactivity")
           
