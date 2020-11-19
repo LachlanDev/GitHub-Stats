@@ -1,6 +1,5 @@
 const discord = require ("discord.js");
-const client = new discord.Client();
-const chalk = require("chalk");
+
 exports.run = (client, message, args) =>{
     const help = new discord.MessageEmbed()
     .setColor('#b434eb')

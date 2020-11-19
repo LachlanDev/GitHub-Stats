@@ -1,6 +1,4 @@
 const discord = require ("discord.js");
-const client = new discord.Client();
-const chalk = require("chalk");
 const Pagination = require('discord-paginationembed');
 
 exports.run = (client, message, args) =>{

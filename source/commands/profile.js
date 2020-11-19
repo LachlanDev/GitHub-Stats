@@ -1,6 +1,4 @@
 const discord = require ("discord.js");
-const client = new discord.Client();
-const chalk = require("chalk");
 
 exports.run = (client, message, args) =>{
     var request = require("request");
