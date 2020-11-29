@@ -10,7 +10,7 @@ exports.run = (client, message, args) =>{
         {name: "Repositories", value: "Lookup a GitHub user's repositories. (Sorted by created date) \n **Usage:** g!repo PapaSnags\n"},
         {name: "Help", value: "Sends This Help Message \n **Usage:** g!help\n"}
         )
-    .setFooter("GitHub Stats BOT Made by PapaSnags#1555 v1.3", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+    .setFooter("GitHub Stats BOT Made by PapaSnags#1555 v1.4", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
     message.channel.send({embed: help })
 
 };

@@ -17,9 +17,11 @@ An Open Source Discord BOT that gets in depth information about users and reposi
 * Profile Lookup - **Usage:** g!profile PapaSnags
 * Repositories - **Usage:** g!repo PapaSnags
 * Help - **Usage:** g!help
+* Changelog -  **Usage:** g!changelog
 
 ## Changelog
-* **1.3 (Current)** - Added version number - 22nd November 2020
+* **1.4 (Current)** - Updated to Max 10 repos (g!repo command) - 29th November 2020
+* **1.3** - Added version number - 22nd November 2020
 * **1.2** - Fixed errors - 16th November 2020
 * **1.1** - Redesigned repo command - 14th November 2020
 * **1.0** - Initial Release - 12th November 2020
