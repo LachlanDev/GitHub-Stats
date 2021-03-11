@@ -8,7 +8,7 @@ exports.run = (client, message, args) =>{
       method: 'GET',
       url: `https://api.github.com/users/${args[0]}/repos?sort=created`,
       headers: {
-        'User-Agent': 'GitHub-Stats-PapaSnags',
+        'User-Agent': 'GitHub-Stats-LachlanDev',
         useQueryString: true
       }
     };
@@ -22,8 +22,8 @@ exports.run = (client, message, args) =>{
     {
       const error = new discord.MessageEmbed()
       .setColor('#b434eb')
-      .addField('An Error Has occured', `Please try again, or contact PapaSnags#1555`)
-      .setFooter("GitHub Stats BOT Made by PapaSnags#1555 v1.3", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+      .addField('An Error Has occured', `Please try again, or contact LachlanDev#8014`)
+      .setFooter("GitHub Stats BOT Made by LachlanDev#8014 v1.3", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
       message.channel.send({embed: error })
       return
     }
@@ -33,7 +33,7 @@ exports.run = (client, message, args) =>{
       const usernf = new discord.MessageEmbed()
       .setColor('#b434eb')
       .addField('User Not Found', `Please try again and check the spelling.`)
-      .setFooter("GitHub Stats BOT Made by PapaSnags#1555 v1.3", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+      .setFooter("GitHub Stats BOT Made by LachlanDev#8014 v1.3", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
       message.channel.send({embed: usernf })
       return
     }
@@ -88,7 +88,7 @@ exports.run = (client, message, args) =>{
             const usernp = new discord.MessageEmbed()
             .setColor('#b434eb')
             .addField(`Cannot find any Repositories by ${args[0]}`, `Please try again, or search another user.`)
-            .setFooter("GitHub Stats BOT Made by PapaSnags#1555 v1.4", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+            .setFooter("GitHub Stats BOT Made by LachlanDev#8014 v1.4", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
             message.channel.send({embed: usernp })
           }
           const FieldsEmbed = new Pagination.FieldsEmbed()
@@ -120,7 +120,7 @@ exports.run = (client, message, args) =>{
             .setTitle(`User Repo Info - @${args[0]}`)
             .setURL(`https://github.com/${args[0]}?tab=repositories`)
             .setThumbnail(jsonprased[0].owner.avatar_url)
-            .setFooter("GitHub Stats BOT Made by PapaSnags#1555 v1.4", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+            .setFooter("GitHub Stats BOT Made by LachlanDev#8014 v1.4", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
             .setDescription(`Repositories by ${args[0]} (Max 10 repos)`);
             
           await FieldsEmbed.build();
@@ -133,8 +133,8 @@ exports.run = (client, message, args) =>{
       {
         const error = new discord.MessageEmbed()
         .setColor('#b434eb')
-        .addField('An Error Has occured', `Please try again, or contact PapaSnags#1555`)
-        .setFooter("GitHub Stats BOT Made by PapaSnags#1555 v1.4", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+        .addField('An Error Has occured', `Please try again, or contact LachlanDev#8014`)
+        .setFooter("GitHub Stats BOT Made by LachlanDev#8014 v1.4", "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
         message.channel.send({embed: error })
       }
     }
