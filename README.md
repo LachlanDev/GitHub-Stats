@@ -5,8 +5,8 @@
     <p>GitHub Stats - Discord BOT</p>
 <h1>
 <p align="center">
-    <a href="https://github.com/papasnags/GitHub-Stats/releases">
-        <img alt="GitHub release" src="https://img.shields.io/github/release/PapaSnags/GitHub-Stats.svg">
+    <a href="https://github.com/LachlanDev/GitHub-Stats/releases">
+        <img alt="GitHub release" src="https://img.shields.io/github/release/LachlanDev/GitHub-Stats.svg">
     </a>
 </p>
 
@@ -14,8 +14,8 @@
 An Open Source Discord BOT that gets in depth information about users and repositories on GitHub. [Discord BOT Invite Link](https://discord.com/oauth2/authorize?client_id=776332560295919626&scope=bot&permissions=93248)
 
 ## Commands 
-* Profile Lookup - **Usage:** g!profile PapaSnags
-* Repositories - **Usage:** g!repo PapaSnags
+* Profile Lookup - **Usage:** g!profile LachlanDev
+* Repositories - **Usage:** g!repo LachLanDev
 * Help - **Usage:** g!help
 * Changelog -  **Usage:** g!changelog
 
@@ -38,8 +38,8 @@ If you would like to contribute to the project please open a PR (Pull Request) c
 If you have any issues feel free to open an issue or join the [Discord Server](https://discord.com/invite/w7B5nKB)
 
 ## Extra
-__Created by PapaSnags#8014__
-* [Website](https://papa-snags.com/projects/PLUG/)
-* [Twitter](https://twitter.com/PapaSnags)
+__Created by LachlanDev#8014__
+* [Website](https://lachlan-dev.com)
+* [Twitter](https://twitter.com/LachlanDev)
 * [Discord Server](https://discord.com/invite/w7B5nKB)
 </br>
