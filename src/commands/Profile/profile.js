@@ -33,6 +33,7 @@ module.exports = {
             }
             catch(e){
                 console.log('Error')
+                return
             }
         
 
@@ -42,12 +43,12 @@ module.exports = {
         else{
             const username = jsonprased.login
             const id = jsonprased.id
-            const avatar_url = jsonprased.avatar_url ?? 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
+            const avatar_url = jsonprased.avatar_url
             const html_url = jsonprased.html_url
             const type = jsonprased.type
             const name = jsonprased.name ?? 'Null'
             const company = jsonprased.company ?? 'Null'
-            const website = jsonprased.blog ?? 'Null'
+            const website = (jsonprased.blog == '' ? 'Null' : `${jsonprased.blog}`)
             const location = jsonprased.location ?? 'Null'
             const bio = jsonprased.bio ?? 'Null'
             const repos = jsonprased.public_repos
@@ -88,7 +89,7 @@ module.exports = {
                     {name: 'Joined', value: `${created_at}`.replace(/T/, ' ').replace(/\..+/, '').split(' ')[0]},
 
                 )
-                
+                .setFooter({ text: 'Made by LachlanDev#8014', iconURL: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'}); 
 
             interaction.reply({ embeds: [Embed] });
         }
