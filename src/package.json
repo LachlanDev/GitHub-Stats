@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "easy-number-formatter": "^1.0.3",
+    "request": "^2.88.2"
+  }
+}
