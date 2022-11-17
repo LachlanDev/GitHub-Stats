@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "discord.js": "^14.6.0",
+    "discordjs-button-pagination": "^3.0.1",
+    "pagination.djs": "^4.0.7",
     "request": "^2.88.2"
   }
 }
