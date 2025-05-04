@@ -1,45 +1,71 @@
-<h1 align="center">
-    <br>
-    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="200">
-    <br>
-    <p>GitHub Stats - Discord BOT</p>
-<h1>
+# 📊 GitHub Stats — Discord Bot
+
+A modern and interactive Discord bot for exploring GitHub profiles, repositories, languages, and more — directly from Discord. Built with [Discord.js](https://discord.js.org), powered by the GitHub API, and tailored for developers and communities.
+
+---
+
 <p align="center">
-    <a href="https://github.com/LachlanDev/GitHub-Stats/releases">
-        <img alt="GitHub release" src="https://img.shields.io/github/release/LachlanDev/GitHub-Stats.svg">
-    </a>
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="100" />
 </p>
 
-# About
-An Open Source Discord BOT that gets in depth information about users and repositories on GitHub. [Discord BOT Invite Link](https://discord.com/api/oauth2/authorize?client_id%3D776332560295919626%26permissions%3D2147568640%26scope%3Dbot%20applications.commands)
+---
 
-## Commands 
-* Profile Lookup - **Usage:** /profile LachlanDev
-* Repositories - **Usage:** /repo LachLanDev
+## ✨ Features
 
+- 🧑‍💻 View GitHub user profiles with achievements and stats  
+- 📦 Get detailed information on any public repository  
+- 📚 Browse through all public repos with buttons and menus  
+- 📈 See total stars, forks, watchers, and commits  
+- 🧠 Analyze all languages used with pie chart visualization  
+- 📰 View recent public GitHub activity  
 
-## Changelog
-* **1.5 (Current)** - Updated to Discord.JS v14 and added slash commands
-* **1.4** - Updated to Max 10 repos (g!repo command) - 29th November 2020
-* **1.3** - Added version number - 22nd November 2020
-* **1.2** - Fixed errors - 16th November 2020
-* **1.1** - Redesigned repo command - 14th November 2020
-* **1.0** - Initial Release - 12th November 2020
+---
 
-## Preview
-### Profile Lookup / Repository Lookup
-<img src="https://raw.githubusercontent.com/LachlanDev/GitHub-Stats/main/media/user.png" height="300">
+## 💻 Commands
 
+| Command       | Description                                                      |
+|---------------|------------------------------------------------------------------|
+| `/profile`    | View a detailed GitHub user profile with achievements            |
+| `/repo`       | Get full details about a specific public repository              |
+| `/repos`      | Browse all public repos (paginated, selectable, interactive)     |
+| `/stats`      | Total stats: stars, forks, commits, repos, followers, etc.       |
+| `/languages`  | Shows language breakdown with a pie chart                        |
+| `/activity`   | Display last 5 GitHub public events (commits, PRs, issues, etc.) |
 
-## Contribute
-If you would like to contribute to the project please open a PR (Pull Request) clearly showing your changes.
+---
 
-## Issues
-If you have any issues feel free to open an issue or join the [Discord Server](https://discord.com/invite/w7B5nKB)
+## 🚀 Getting Started
 
-## Extra
-__Created by LachlanDev#8014__
-* [Website](https://lachlan-dev.com)
-* [Twitter](https://twitter.com/LachlanDev)
-* [Discord Server](https://discord.com/invite/w7B5nKB)
-</br>
+```bash
+git clone https://github.com/your-username/github-stats-bot.git
+cd github-stats-bot
+npm install
+
+```
+Rename the ``.env.example`` to ``.env.example`` and fill in the following fields.
+
+```
+TOKEN=your_discord_bot_token
+CLIENT_ID=your_discord_client_id
+GUILD_ID=your_guild_id_if_dev_only
+GITHUB_TOKEN=your_github_token
+ENVIRONMENT=dev
+```
+
+Run the bot:
+```bash
+node src/index.js
+```
+
+## 🧪 Tech Stack
+- Node.js + Discord.js v14
+
+- GitHub REST API (with personal access token)
+
+- Chart.js via chartjs-node-canvas (for language pie charts)
+
+## 🛠️ Contributing
+PRs are welcome! Please fork the repo and submit your improvements or suggestions.
+
+## 📄 License
+MIT © @LachlanDev
