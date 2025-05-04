@@ -2,11 +2,18 @@
 
 A modern and interactive Discord bot for exploring GitHub profiles, repositories, languages, and more — directly from Discord. Built with [Discord.js](https://discord.js.org), powered by the GitHub API, and tailored for developers and communities.
 
+<p align="center">
+  <a href="https://discord.com/oauth2/authorize?client_id=1368511664676274186&permissions=277025508352&scope=bot%20applications.commands">
+    👉 Invite GitHub Stats Bot to your server
+  </a>
+</p>
+
 ---
 
 <p align="center">
   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="100" />
 </p>
+
 
 ---
 
