@@ -14,7 +14,6 @@ A modern and interactive Discord bot for exploring GitHub profiles, repositories
   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="100" />
 </p>
 
-
 ---
 
 ## ✨ Features
@@ -30,16 +29,27 @@ A modern and interactive Discord bot for exploring GitHub profiles, repositories
 
 ## 💻 Commands
 
-| Command       | Description                                                      |
-|---------------|------------------------------------------------------------------|
-| `/profile`    | View a detailed GitHub user profile with achievements            |
-| `/repo`       | Get full details about a specific public repository              |
-| `/repos`      | Browse all public repos (paginated, selectable, interactive)     |
-| `/stats`      | Total stats: stars, forks, commits, repos, followers, etc.       |
-| `/languages`  | Shows language breakdown with a pie chart                        |
-| `/activity`   | Display last 5 GitHub public events (commits, PRs, issues, etc.) |
+### 🧑‍💻 Users
 
----
+- `/user profile [username]` — View a GitHub user profile.  
+- `/user followers [username]` — View followers of a GitHub user.  
+- `/user following [username]` — View who a GitHub user is following.  
+- `/user statistics [username]` — Summary stats about a GitHub user.  
+- `/user repos [username]` — List public repositories for a GitHub user.  
+- `/user languages [username]` — Aggregated language usage across all public repositories.  
+- `/user activity [username]` — Show recent public GitHub activity from a user.  
+- `/user stars [username]` — List repositories starred by a GitHub user.  
+- `/user gists [username]` — List public gists for a GitHub user.  
+- `/user organizations [username]` — List organizations a GitHub user belongs to.  
+
+### 📦 Repository
+
+- `/repo [username] [repo]` — Get details about a GitHub repository.  
+
+### 🔍 Search
+
+- `/search repositories [query]` — Search GitHub repositories.  
+
 
 ## 🚀 Getting Started
 
