@@ -27,7 +27,6 @@ A modern and interactive Discord bot for exploring GitHub profiles, repositories
 
 ---
 
-## 💻 Commands
 ## 💻 Commands & Previews
 
 <details>
