@@ -98,7 +98,7 @@ _Show recent public GitHub activity._
 
 _List repositories starred by a GitHub user._
 
-![User Stars Preview](/media/preview/userrepos.png)
+![User Stars Preview](/media/preview/userstars.png)
 
 </details>
 
@@ -128,7 +128,7 @@ _List organizations a GitHub user belongs to._
 _Get detailed information on a GitHub repository._
 
 ![Repo Preview](/media/preview/repointeractive.png)
-![Repo Preview](/media/preview/repointeractivefalse.png)
+![Repo Preview](/media/preview/repointeractiveFalse.png)
 
 
 </details>
