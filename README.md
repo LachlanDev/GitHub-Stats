@@ -155,11 +155,20 @@ npm install
 Rename the ``.env.example`` to ``.env.example`` and fill in the following fields.
 
 ```
-TOKEN=your_discord_bot_token
-CLIENT_ID=your_discord_client_id
-GUILD_ID=your_guild_id_if_dev_only
-GITHUB_TOKEN=your_github_token
+# Discord Bot Token
+TOKEN=your_discord_bot_token_here
+
+# Discord Application (Client) ID
+CLIENT_ID=your_discord_application_id_here
+
+# Your test server (guild) ID – used for fast dev command registration
+GUILD_ID=your_guild_id_here
+
+# Optional: Set to 'dev' to skip global command registration during development
 ENVIRONMENT=dev
+
+# Used to bypass githubs rate limits of 60 req per hour
+GITHUB_TOKEN=ghp_yourGeneratedTokenHere
 ```
 
 Run the bot:
