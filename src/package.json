@@ -1,6 +1,6 @@
 {
   "name": "github-stats",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "An Open Source Discord BOT that gets in depth information about users and repositories on GitHub.",
   "main": "index.js",
   "scripts": {
