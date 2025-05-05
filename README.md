@@ -28,28 +28,122 @@ A modern and interactive Discord bot for exploring GitHub profiles, repositories
 ---
 
 ## 💻 Commands
+## 💻 Commands & Previews
 
-### 🧑‍💻 Users
+<details>
+<summary>🧑‍💻 <code>/user profile [username]</code></summary>
 
-- `/user profile [username]` — View a GitHub user profile.  
-- `/user followers [username]` — View followers of a GitHub user.  
-- `/user following [username]` — View who a GitHub user is following.  
-- `/user statistics [username]` — Summary stats about a GitHub user.  
-- `/user repos [username]` — List public repositories for a GitHub user.  
-- `/user languages [username]` — Aggregated language usage across all public repositories.  
-- `/user activity [username]` — Show recent public GitHub activity from a user.  
-- `/user stars [username]` — List repositories starred by a GitHub user.  
-- `/user gists [username]` — List public gists for a GitHub user.  
-- `/user organizations [username]` — List organizations a GitHub user belongs to.  
+_View a GitHub user profile with stats and achievements._
 
-### 📦 Repository
+![User Profile Preview](./media/preview/userprofile.png)
 
-- `/repo [username] [repo]` — Get details about a GitHub repository.  
+</details>
 
-### 🔍 Search
+<details>
+<summary>🧑‍💻 <code>/user followers [username]</code></summary>
 
-- `/search repositories [query]` — Search GitHub repositories.  
+_List followers of a GitHub user._
 
+![User Followers Preview](./media/preview/userfollowers.png)
+
+</details>
+
+<details>
+<summary>🧑‍💻 <code>/user following [username]</code></summary>
+
+_List who a GitHub user is following._
+
+![User Following Preview](/media/preview/userfollowing.png)
+
+</details>
+
+<details>
+<summary>🧑‍💻 <code>/user statistics [username]</code></summary>
+
+_Summary stats about a GitHub user._
+
+![User Statistics Preview](/media/preview/userstats.png)
+
+</details>
+
+<details>
+<summary>🧑‍💻 <code>/user repos [username]</code></summary>
+
+_List public repositories for a GitHub user._
+
+![User Repos Preview](/media/preview/userrepos.png)
+
+</details>
+
+<details>
+<summary>🧑‍💻 <code>/user languages [username]</code></summary>
+
+_Aggregated language usage across all public repositories._
+
+![User Languages Preview](/media/preview/userlang.png)
+
+</details>
+
+<details>
+<summary>🧑‍💻 <code>/user activity [username]</code></summary>
+
+_Show recent public GitHub activity._
+
+![User Activity Preview](/media/preview/useractivity.png)
+
+</details>
+
+<details>
+<summary>🧑‍💻 <code>/user stars [username]</code></summary>
+
+_List repositories starred by a GitHub user._
+
+![User Stars Preview](/media/preview/userrepos.png)
+
+</details>
+
+<details>
+<summary>🧑‍💻 <code>/user gists [username]</code></summary>
+
+_List public gists for a GitHub user._
+
+![User Gists Preview](/media/preview/usergists.png)
+
+</details>
+
+<details>
+<summary>🧑‍💻 <code>/user organizations [username]</code></summary>
+
+_List organizations a GitHub user belongs to._
+
+![User Orgs Preview](/media/preview/userorgs.png)
+
+</details>
+
+---
+
+<details>
+<summary>📦 <code>/repo [username] [repo]</code></summary>
+
+_Get detailed information on a GitHub repository._
+
+![Repo Preview](/media/preview/repointeractive.png)
+![Repo Preview](/media/preview/repointeractivefalse.png)
+
+
+</details>
+
+---
+
+<details>
+<summary>🔍 <code>/search repositories [query]</code></summary>
+
+_Search GitHub repositories._
+
+![Repo Preview](/media/preview/reposearch.png)
+![Repo Preview](/media/preview/reposearch2.png)
+
+</details>
 
 ## 🚀 Getting Started
 
