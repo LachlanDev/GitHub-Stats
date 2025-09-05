@@ -152,7 +152,7 @@ cd github-stats-bot
 npm install
 
 ```
-Rename the ``.env.example`` to ``.env.example`` and fill in the following fields.
+Rename the ``.env.example`` to ``.env`` and fill in the following fields.
 
 ```
 # Discord Bot Token
